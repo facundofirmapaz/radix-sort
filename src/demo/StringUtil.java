@@ -71,4 +71,53 @@ public class StringUtil
             arr[i] = lpad(arr[i], max, c);
         }
     }
+
+    public static String rpad(String s, char c, int n)
+    {
+        return s + replicate(c,n - s.length());
+    }
+
+    public static String ltrim(String s)
+    {
+        int index = 0;
+        while (s.charAt(index) == ' ')
+            s = s.substring(index + 1);
+
+        return s;
+    }
+
+    public static String rtrim(String s)
+    {
+        int index = s.length() - 1;
+
+        while (s.charAt(index) == ' ')
+        {
+            s = s.substring(0, index);
+            index = s.length() - 1;
+        }
+
+        return s;
+    }
+
+    public static String trim(String s) { return rtrim(ltrim(s)); }
+
+    public static int indexOfN(String s,char c,int n)
+    {
+        int ocurrencias = 0;
+        int resp = -1;
+        for (int i = 0; i < s.length(); i++)
+        {
+            if (s.charAt(i) == c)
+            {
+                ocurrencias++;
+                if (ocurrencias == n)
+                {
+                    resp = i;
+                    break;
+                }
+            }
+        }
+
+        return resp;
+    }
 }

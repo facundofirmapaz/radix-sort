@@ -70,5 +70,11 @@ public class Main
         {
             System.out.print(arr[i]+(i<arr.length-1?",":""));
         }
+        System.out.println();
+
+        String p = "John|Paul|George|Ringo";
+
+        System.out.println(StringUtil.indexOfN(p, '|', 2));
+
     }
 }
